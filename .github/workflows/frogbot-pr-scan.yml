@@ -118,13 +118,14 @@ jobs:
           # Set the minimum severity for vulnerabilities that should be fixed and commented on in pull requests
           # The following values are accepted: Low, Medium, High or Critical
           # JF_MIN_SEVERITY: ""
-          JF_GIT_PULL_REQUEST_ID: 44
+          #JF_GIT_PULL_REQUEST_ID: 44
           JF_GIT_REPO: frogbot_demo_pypi
-          JF_GIT_OWNER: omerzi
-          PLAT_P: ${{ secrets.PLAT_P }}
+          JF_GIT_OWNER: harryv-art
+          #PLAT_P: ${{ secrets.PLAT_P }}
           JF_GIT_PROVIDER: github
         run: |
           curl -fLg -X GET "https://releases.jfrog.io/artifactory/frogbot/v2/[RELEASE]/frogbot-linux-amd64/frogbot" -o "frogbot"
           chmod u+x frogbot
+          git remote -v
           ./frogbot spr
           
